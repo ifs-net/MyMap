@@ -1,0 +1,15 @@
+svn:
+====
+2008-02-28 by trudero:
+- Updated "mapstraction.js"
+  Including fix to hide markers without removing tracks.
+- Added asynchronous items download (AJAX/JSON)
+  Currently disabled (commented) out because
+  - download breaks if JSON exceedes ~4KB
+    => sequentially downloading multiple parts
+  - it is slower than the direcly integrated code
+
+
+1.0
+===
+- initial release
