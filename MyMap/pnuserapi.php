@@ -72,7 +72,7 @@ function MyMap_userapi_getCoord($args)
 	$placename = utf8_encode($args['placename']);
 	$countrycode = $args['countrycode'];
 	$url = 'http://ws.geonames.org/postalCodeSearch?postalcode='.$postalcode.'&country='.$countrycode.'&placename='.str_replace(' ','%20',$placename).'&style=medium&MaxRows=100';
-//for debugging only...	print $url;
+//for debugging only...		print $url;
 	$xml = simplexml_load_file($url);		
 	$results = (int) $xml->totalResultsCount;
 	if ($results == 1) {
