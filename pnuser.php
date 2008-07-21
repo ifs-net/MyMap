@@ -175,20 +175,20 @@ class mymap_user_editPointHandler
 
 			// We need to check if there is lat and lng submitted or if we have to get the coordinates via webservice
 			PageUtil::AddVar('body','onload="javascript:toggledisplay(\'mymap_hiddendiv_addmarkers\',\'indicator_addmarkers\'); return false;"');
-			$obj = $render->pnFormGetValues();
-			$id = $this->id;
-			$uid = pnUserGetVar('uid');
+			$obj	= $render->pnFormGetValues();
+			$id 	= $this->id;
+			$uid 	= pnUserGetVar('uid');
 			if ($this->id > 0) $obj['id']=$id;
 			if (!isset($obj['lng']) || (!isset($obj['lat']))) {
 				$coord=pnModAPIFunc('MyMap','user','getCoord',$obj);
 				srand(microtime()*1000000);
 				if (count($coord)==1) {
 					$c=$coord[0];
-					$obj['postalcode'] = $c['postalcode'];
-					$obj['placename'] = $c['placename'];
-					$obj['countrycode'] = $c['countrycode'];
-					$obj['lat'] = $c['lat'];
-					$obj['lng'] = $c['lng'];
+					$obj['postalcode'] 		= $c['postalcode'];
+					$obj['placename'] 		= $c['placename'];
+					$obj['countrycode'] 	= $c['countrycode'];
+					$obj['lat'] 			= (float)$c['lat'];
+					$obj['lng'] 			= (float)$c['lng'];
 					// shuffle a little bit... lat +- 0.004 lng +- 0.004
 					$obj['lat']+=0.00001*(rand(1,800)-400);
 					$obj['lng']+=0.00001*(rand(1,800)-400);
@@ -240,12 +240,12 @@ class mymap_user_editMapHandler
 		$items_maptype = array (array('text' => _MYMAPNORMAL, 'value' => 'NORMAL'),
 								array('text' => _MYMAPHYBRID, 'value' => 'HYBRID'),
 								array('text' => _MYMAPSATELLITE, 'value' => 'SATELLITE')	 );
-		$render->assign('items_wiki',$items_yesno);
-		$render->assign('wiki',0);
-		$render->assign('items_optionaltable',$items_yesno);
-		$render->assign('optionaltable',1);
-		$render->assign('items_maptype',$items_maptype);
-		$render->assign('maptype','h');
+		$render->assign('items_wiki',			$items_yesno);
+		$render->assign('wiki',					0);
+		$render->assign('items_optionaltable',	$items_yesno);
+		$render->assign('optionaltable',		1);
+		$render->assign('items_maptype',		$items_maptype);
+		$render->assign('maptype',				'h');
 
 		$this->id = (int)FormUtil::getPassedValue('id', 0);
 		if ($this->id > 0) {
@@ -258,9 +258,9 @@ class mymap_user_editMapHandler
 	{
 		if ($args['commandName']=='update') {
 			if (!$render->pnFormIsValid()) return false;
-			$obj = $render->pnFormGetValues();
-			$obj['id']=$this->id;
-			$obj['uid']=pnUserGetVar('uid');
+			$obj 		= $render->pnFormGetValues();
+			$obj['id']	= $this->id;
+			$obj['uid']	= pnUserGetVar('uid');
 
 			// Should the map be deleted?
 			$deleteMap = (int)$obj['deletemap'];
@@ -301,8 +301,8 @@ class mymap_user_routesHandler
 		    $obj = $render->pnFormGetValues();
 
 			// first check if coordinates are given as argument
-			$lat = $obj['lat'];
-			$lng = $obj['lng'];
+			$lat = (float)$obj['lat'];
+			$lng = (float)$obj['lng'];
 			if (isset($lat) && isset($lng)) {
 				$obj['mid'] = $this->id;
 				if (DBUtil::insertObject($obj,'mymap_waypoints')) logUtil::registerStatus(_MYMAPWAYPOINTADDED);
