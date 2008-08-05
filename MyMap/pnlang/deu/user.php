@@ -53,7 +53,7 @@ define('_MYMAPOPTIONALTABLE',			'Soll eine Tabelle unter der Karte angezeigt wer
 define('_MYMAPUPDATECREATEMAP',			'Karte erstellen / aktualisieren');
 define('_MYMAPRETURNTOMAINPAGE',		'Zur Hauptseite');
 define('_MYMAPUPDATED',					'Die Konfiguration der Karte wurde aktualisiert');
-define('_MYMAPDELETEMAP',				'Karte und alle damit verknüpften Informationen speichern');
+define('_MYMAPDELETEMAP',				'Karte und alle damit verknüpften Informationen löschen');
 define('_MYMAPMAPCREATED',				'Die neue Karte wurde erfolgreich angelegt');
 define('_MYMAPMAPDELETED',				'Die Karte wurde mit allen vernüpften Informationen erfolgreich gelöscht');
 define('_MYMAPMAPDELETIONERROR',		'Während des Versuchs, die Karte und die damit verknüpften Informationen zu löschen, ist ein Fehler aufgetreten');
