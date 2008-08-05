@@ -192,6 +192,9 @@ class mymap_user_editPointHandler
 					// shuffle a little bit... lat +- 0.004 lng +- 0.004
 					$obj['lat']+=0.00001*(rand(1,800)-400);
 					$obj['lng']+=0.00001*(rand(1,800)-400);
+					// hack to avoid troubles on some installations
+					$obj['lat'] = (float)str_replace(',','.',$obj['lat']);
+					$obj['lng'] = (float)str_replace(',','.',$obj['lng']);
 				}
 				else {
 					foreach ($coord as $c) $coords.=$c['postalcode'].' '.$c['placename'].' ('.$c['countrycode'].', '.$c['adminname1'].'), ';
@@ -303,6 +306,9 @@ class mymap_user_routesHandler
 			// first check if coordinates are given as argument
 			$lat = (float)$obj['lat'];
 			$lng = (float)$obj['lng'];
+			// hack to avoid troubles on some installations
+			$obj['lat'] = (float)str_replace(',','.',$obj['lat']);
+			$obj['lng'] = (float)str_replace(',','.',$obj['lng']);
 			if (isset($lat) && isset($lng)) {
 				$obj['mid'] = $this->id;
 				if (DBUtil::insertObject($obj,'mymap_waypoints')) logUtil::registerStatus(_MYMAPWAYPOINTADDED);
