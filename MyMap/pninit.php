@@ -16,17 +16,6 @@ function MyMap_init()
 	pnModSetVar('MyMap','notify',1);
 	pnModSetVar('MyMap','map_overview',1);
 
-    // Set up module hooks
-    if (!pnModRegisterHook('item',
-                           'transform',
-                           'API',
-                           'MyMap',
-                           'hook',
-                           'transform')) {
-        LogUtil::registerError('_MYMAPHOOKREGISTERFAILED');
-        return false;
-    }
-
     // Initialisation successful
     return true;
 }
@@ -45,17 +34,6 @@ function MyMap_delete()
 
 	// Delete all module variables
 	pnModDelVar('MyMap');
-
-    // Set up module hooks
-    if (!pnModUnregisterHook('item',
-                           'transform',
-                           'API',
-                           'MyMap',
-                           'hook',
-                           'transform')) {
-        LogUtil::registerError('_MYMAPHOOKDELETEFAILED');
-        return false;
-    }
 	
     // Deletion successful
     return true;
