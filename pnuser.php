@@ -98,7 +98,7 @@ function MyMap_user_display()
 	// is there a delete-action called?
 	$command = FormUtil::getPassedValue('command');
 	$pid = FormUtil::getPassedValue('pid');
-	if (isset($command) && ($command == "delete") && (isset($pid)) && ($pid>0)) {
+	if (isset($command) && ($command == "delete") && isset($pid) && ($pid>0)) {
 		// we need the marker to check the user's permission
 		if (!SecurityUtil::confirmAuthKey()) LogUtil::registerAuthIDError();
 		else {
