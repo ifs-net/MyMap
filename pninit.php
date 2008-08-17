@@ -50,17 +50,17 @@ function MyMap_upgrade($oldversion)
     // Upgrade dependent on old version number
     switch($oldversion) {
         case 1.0:
-	    // we do not support hooks any more
-	    if (!pnModUnregisterHook('item',
-	                           'transform',
-	                           'API',
-	                           'MyMap',
-	                           'hook',
-	                           'transform')) {
-	        LogUtil::registerError('_MYMAPHOOKDELETEFAILED');
-	        return false;
-	    }
-        break;
+		    // we do not support hooks any more
+		    if (!pnModUnregisterHook('item',
+		                           'transform',
+		                           'API',
+		                           'MyMap',
+		                           'hook',
+		                           'transform')) {
+		        LogUtil::registerError('_MYMAPHOOKDELETEFAILED');
+		        return false;
+		    }
+	        break;
     }
 
     // Update successful
