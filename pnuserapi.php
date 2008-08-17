@@ -424,4 +424,40 @@ function MyMap_userapi_createKml($args) {
 	return $render->fetch('mymap_user_export_kml.htm');
 }
 
+/** 
+ * get code for specific map inclusion and add pagevars
+ *
+ * @param	$args['id']		map id
+ * return	code or false otherwise
+ */
+function MyMap_userapi_getCodeForMap($args)
+{
+  	$mid = (int)$args['id'];
+  	$map		= pnModAPIFunc('MyMap','user','getMaps',		array('id' 	=> $mid));
+  	if (($map['id'] != $mid) && (!($mid > 0))) return false;
+	$markers 	= pnModAPIFunc('MyMap','user','getMarkers',		array('mid'	=> $mid));
+	$waypoints 	= pnModAPIFunc('MyMap','user','getWaypoints',	array('mid'	=> $mid));
+	// set center to the markers not the route!
+	$center 	= pnModAPIFunc('MyMap','user','getCenter',array_merge($markers,$waypoints));
+	$map['centerlat'] 	= $center['lat'];
+	$map['centerlng'] 	= $center['lng'];
+	$map['url_wps'] 	= pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
+    $render 	= pnRender::getInstance('MyMap');
+    $render->assign('map', 			$map);
+    $render->assign('uid', 			pnUserGetVar('uid'));
+    $render->assign('clickzoom',	'0');
+    $render->assign('markers',		$markers);
+    $render->assign('waypoints',	$waypoints);
+    $render->assign('provider',		pnModGetVar('MyMap','provider'));
+//I do not know what I meant here... We'll remove it from now on				    $render->assign('hook',	'1');
+    if (pnModGetVar('MyMap','map_overview') == 1) $map_overview = 'true';
+    else $map_overview = 'false';
+    $render->assign('map_overview',	$map_overview);
+    $content = $render->fetch('mymap_user_display_map.htm');
+	// add the MyMap specific javascripts
+  	pnModAPIFunc('MyMap','user','addMapJS');
+  	
+  	// return code
+  	return $content;
+}
 ?>

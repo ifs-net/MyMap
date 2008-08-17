@@ -1,7 +1,8 @@
 <?php
 // account settings panel
 define('_MYMAPMYMAPS',					'Meine Karten und Routen');	
-// hook
+// needle and insert code part
+define('_MYMAPMAPNOTFOUND',				'Angegebene Karte nicht gefunden');
 define('_MYMAPHOOKREGISTERFAILED',		'Das Initialisieren des Hooks schlug fehl');
 define('_MYMAPHOOKDELETEFAILED',		'Das Löschen des Hooks schlug fehl');
 define('_MYMAPHOOKDISPLAYERROR',		'Es ist ein Fehler in der Hook-Funktion von MyMap aufgetreten');
