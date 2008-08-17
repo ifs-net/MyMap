@@ -4,8 +4,8 @@
 // for display and upgrade purposes
 $modversion['name']           = pnVarPrepForDisplay('MyMap');
 // the version string must not exceed 10 characters!
-$modversion['version']        = '1.0';
-$modversion['description']    = pnVarPrepForDisplay('Geographical maps for everybody'); 
+$modversion['version']        = '1.1';
+$modversion['description']    = pnVarPrepForDisplay('Geographical maps with routes and markers for everybody'); 
 $modversion['displayname']    = pnVarPrepForDisplay('MyMap');
 
 // The following in formation is used by the credits module
