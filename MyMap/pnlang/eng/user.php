@@ -1,7 +1,8 @@
 <?php
 // account settings panel
 define('_MYMAPMYMAPS',					'My maps and routes');	
-// hook
+// needle / code part
+define('_MYMAPMAPNOTFOUND',				'Map with given ID not found');
 define('_MYMAPHOOKREGISTERFAILED',		'Hook initialisation failed');
 define('_MYMAPHOOKDELETEFAILED',		'Hook deletion failed');
 define('_MYMAPHOOKDISPLAYERROR',		'Hook display error for the MyMap hook');
