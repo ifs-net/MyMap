@@ -1,5 +1,11 @@
 svn:
 ====
+
+2008-08-17 by quan:
+- removed hook api and hook functionality and:
+- added needle support for MultiHook - it is simplier and 
+  better than a hook!
+  
 2008-02-28 by trudero:
 - Updated "mapstraction.js"
   Including fix to hide markers without removing tracks.

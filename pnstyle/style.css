@@ -21,7 +21,7 @@
 	font-size:20px; 
 	padding:10px; 
 	margin: 0px; 
-	z-index:-1000;
+	z-index:5001;
 }
 .mymap_graybackground {
   	position: fixed; 
@@ -32,7 +32,7 @@
 	background-color:#4C4C4C;
 	opacity:0.9;
 	moz-opacity:0.9;
-	z-index:-890;
+	z-index:5000;
 }
 .mymap_minimizelink {
 	color:#ff3333;
@@ -71,7 +71,7 @@
 	top: 50%;
 	margin-left: -200px;
 	margin-top: -200px;
-	z-index: -800;
+	z-index: -9800;
 	padding: 10px;
 }
 /** mapcontrol parts **/
