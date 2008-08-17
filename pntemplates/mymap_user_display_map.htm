@@ -1,5 +1,5 @@
 <!--[* fullscreen mode*]-->
-<div id="mymap_closefullscreen<!--[$map.id]-->" class="mymap_closefullscreen"><a href="#" onclick="javascript:$('mymap_graybackground<!--[$map.id]-->').hide();$('map<!--[$map.id]-->').setStyle({width: '<!--[$map.width]-->px',height: '<!--[$map.height]-->px',position:'relative',left: '0px',top: '0px','margin-left': '0px','margin-top': '0px','z-index': '9999'});map<!--[$map.id]-->.resizeTo(<!--[$map.width]-->,<!--[$map.height]-->);$('mymap_closefullscreen<!--[$map.id]-->').hide();return false;" class="mymap_minimizelink"><!--[pnml name="_MYMAPMINIMIZE"]--></a></div>
+<div id="mymap_closefullscreen<!--[$map.id]-->" class="mymap_closefullscreen"><a href="#" onclick="javascript:$('mymap_graybackground<!--[$map.id]-->').hide();$('map<!--[$map.id]-->').setStyle({width: '<!--[$map.width]-->px',height: '<!--[$map.height]-->px',position:'relative',left: '0px',top: '0px','margin-left': '0px','margin-top': '0px'});map<!--[$map.id]-->.resizeTo(<!--[$map.width]-->,<!--[$map.height]-->);$('mymap_closefullscreen<!--[$map.id]-->').hide();return false;" class="mymap_minimizelink"><!--[pnml name="_MYMAPMINIMIZE"]--></a></div>
 <div id="mymap_graybackground<!--[$map.id]-->" class="mymap_graybackground"></div>
 <!--[* /fullscreen mode*]-->
 
@@ -7,7 +7,7 @@
 	<div id="mymap_indicator_<!--[$map.id]-->" class="mymap_indicator"></div>
 	<div class="mymap_mapheader_title">
 		<i><strong><!--[$map.title]--></strong></i>
-		<a href="#" onclick="javascript:$('mymap_graybackground<!--[$map.id]-->').show();$('map<!--[$map.id]-->').setStyle({'width': '1000px','height': '700px','position': 'fixed','left': '50px','top': '50px','margin-left': '-500px', 'margin-top': '-350px','z-index': '5005'});map<!--[$map.id]-->.resizeTo(1000,700);$('mymap_closefullscreen<!--[$map.id]-->').show();return false;"><!--[pnml name="_MYMAPFULLSCREENMODE"]--></a>
+		<a href="#" onclick="javascript:$('map<!--[$map.id]-->').setStyle({'width': '1000px','height': '700px','position': 'fixed','left': '50px','top': '50px','margin-left': '-500px', 'margin-top': '-350px','z-index': '5005'});map<!--[$map.id]-->.resizeTo(1000,700);$('mymap_closefullscreen<!--[$map.id]-->').show();$('mymap_graybackground<!--[$map.id]-->').show();return false;"><!--[pnml name="_MYMAPFULLSCREENMODE"]--></a>
 	</div>
 	<div id="mymap_mapcontrol<!--[$map.id]-->" class="mymap_mapheader_link">
 		<a href="#" onclick="javascript:$('mymap_mapcontrolbox<!--[$map.id]-->').toggle();$('mymap_mapcontrol<!--[$map.id]-->').toggle();return false;">show mapControl</a>
@@ -27,14 +27,14 @@
 	</div> <!-- mymap_menubox -->
 </div> <!-- mapheader -->
 
-<div id="map<!--[$map.id]-->" style="background-color:#ffffff;width:<!--[$map.width]-->px;height:<!--[$map.height]-->px;"></div>
+<div id="map<!--[$map.id]-->" class="mymap_map" style="width:<!--[$map.width]-->px;height:<!--[$map.height]-->px;"></div>
 
-<div id="mymap_export<!--[$map.id]-->" class="mymap_exportpopup" style="position: fixed; z-index: 6100;">
+<div id="mymap_export<!--[$map.id]-->" class="mymap_exportpopup">
 	<!--[pnml name="_MYMAPWAITFOREXPORT"]--><br /><br /><br /><br />
 	<img src="modules/MyMap/pnimages/ajax.gif" />
 </div>
 
-<!--[* the divs are already being displayed. *]-->
+<!--[* the divs are already being displayed. Let's hide them now and get them just when it's neccessary *]-->
 <script type="text/javascript">
 	$('mymap_mapcontrolbox<!--[$map.id]-->').hide();
 	$('mymap_export<!--[$map.id]-->').hide();

@@ -32,13 +32,17 @@
 	background-color:#4C4C4C;
 	opacity:0.9;
 	moz-opacity:0.9;
-	z-index:5000;
+	z-index:500;
 }
 .mymap_minimizelink {
 	color:#ff3333;
 }
 
 /** design around the displayed map **/
+.mymap_map {
+  	background-color:#ffffff;
+  	z-index: 510;
+}
 .mymap_mapheader {
 	height:18px;
 }
@@ -66,12 +70,12 @@
 	text-align: left;
 	border: 1px solid #000;
 	background-color: #cccccc;
-	position: absolute;
+	position: fixed;
 	left: 50%;
 	top: 50%;
 	margin-left: -200px;
 	margin-top: -200px;
-	z-index: -9800;
+	z-index: 6200;
 	padding: 10px;
 }
 /** mapcontrol parts **/
