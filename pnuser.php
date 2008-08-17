@@ -86,14 +86,14 @@ function MyMap_user_display()
 	}
 	
 	// get the map's center point
-	$markers = pnModAPIFunc('MyMap','user','getMarkers',array('mid'=>$mid));
-	$center = pnModAPIFunc('MyMap','user','getCenter',$markers);
-	$waypoints = pnModAPIFunc('MyMap','user','getWayPoints',array('mid'=>$mid));
-	$map['centerlat']=$center['lat'];
-	$map['centerlng']=$center['lng'];
+	$markers 	= pnModAPIFunc('MyMap','user','getMarkers',array('mid'=>$mid));
+	$center 	= pnModAPIFunc('MyMap','user','getCenter',$markers);
+	$waypoints 	= pnModAPIFunc('MyMap','user','getWayPoints',array('mid'=>$mid));
+	$map['centerlat'] 	= $center['lat'];
+	$map['centerlng'] 	= $center['lng'];
 	
 	// we need this info for ajax waypoints loading
-	$map['url_wps'] = pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
+	$map['url_wps'] 	= pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
 	
 	// is there a delete-action called?
 	$command = FormUtil::getPassedValue('command');
