@@ -1,6 +1,10 @@
+SVN:
+====
+
 1.1:
 ====
 2008-08-23 by quan
+- included latest mapstraction.js
 - added scribite support
 - fixed bug for users not having js enabled
 2008-08-18 by quan:
