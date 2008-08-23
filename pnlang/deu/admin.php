@@ -29,4 +29,5 @@ define('_MYMAPNOTIFYOWNER',				'Wenn an der Karte eines Nutzers durch einen frem
 define('_MYMAPSUPPORTMYMAP',			'Unterstütze die Entwicklung dieses Modul');
 define('_MYMAPDONATETHIS',				'mit PayPal eine Kleinigkeit spenden!');
 define('_MYMAPDONATE',					'Wenn Dir das Modul gefällt, dann kannst Du es mit einem Betrag deiner Wahl finanziell unterstützen. Das Programm ist zwar eigentlich umsonst und open source - aber wenn ich es schaffe, meine Freundin zu einem Candlelight-Dinner auszuführen fällt es mir wesentlich leichter, das nächste Mal von ihr freie Zeit zu bekommen und an einem Modul weiterarbeiten zu können ;-)');
+define('_MYMAPUSEWYSIWYG',				'WYSIWYG Editor für die Beschreibung von Markern aus dem Scribite-Paket nutzen, wenn verfügbar.');
 ?>
