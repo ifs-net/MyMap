@@ -130,3 +130,12 @@ a:hover.mymap_menu_inside {
 	color: #900;
 }
 
+.mymap_hidden {
+  	display: none;
+}
+
+.mymap_noscriptbox {
+	border: 1px solid #000;
+	background-color: #ecd8ae;
+	padding: 10px;
+}

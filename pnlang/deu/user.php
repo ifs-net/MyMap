@@ -2,6 +2,7 @@
 // account settings panel
 define('_MYMAPMYMAPS',					'Meine Karten und Routen');	
 // needle and insert code part
+define('_MYMAPNOSCRIPTMESSAGE',			'Bitte Javascript aktivieren um die hier eingebundene Karte anzeigen zu lassen');
 define('_MYMAPMAPNOTFOUND',				'Angegebene Karte nicht gefunden');
 define('_MYMAPHOOKREGISTERFAILED',		'Das Initialisieren des Hooks schlug fehl');
 define('_MYMAPHOOKDELETEFAILED',		'Das Löschen des Hooks schlug fehl');

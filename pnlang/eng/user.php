@@ -2,6 +2,7 @@
 // account settings panel
 define('_MYMAPMYMAPS',					'My maps and routes');	
 // needle / code part
+define('_MYMAPNOSCRIPTMESSAGE',			'Please enable javascript to see the map that should be displayed here');
 define('_MYMAPMAPNOTFOUND',				'Map with given ID not found');
 define('_MYMAPHOOKREGISTERFAILED',		'Hook initialisation failed');
 define('_MYMAPHOOKDELETEFAILED',		'Hook deletion failed');
