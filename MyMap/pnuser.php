@@ -116,6 +116,17 @@ function MyMap_user_display()
 
 	// We need some javascript
 	pnModAPIFunc('MyMap','user','addMapJS');
+
+	//and scribite support
+	$scribite = pnModGetVar('MyMap','scribite');
+	if (pnModAvailable('scribite') && ($scribite == 1)) {
+	        $scribite = pnModFunc('scribite','user','loader', array('modname' => 'MyMap',
+	                                                                'editor'  => 'xinha', // normally pnModGetVar('MyMap', 'editor')
+	                                                                'areas'   => array('text'),
+	                                                                'tpl'     => 'mymap_user_display.htm'));
+	    PageUtil::AddVar('rawtext', $scribite);
+    }
+
 	// Create output object
 	$render = FormUtil::newpnForm('MyMap');
 	$render->assign('map',$map);

@@ -29,4 +29,5 @@ define('_MYMAPNOTIFYOWNER',				'Notify the owner of a map whenever another perso
 define('_MYMAPSUPPORTMYMAP',			'Support the MyMap module');
 define('_MYMAPDONATETHIS',				'Donate with PayPal!');
 define('_MYMAPDONATE',					'You like this module and it is usefull for you? Thank you for some little donation for the programmer! OK - I like programming very much and this module is free and open source - but if you spend some money I\'ll go out for a nice candlelight dinner with my girlfriend and it will be much easier next time to get free time for programming ;-)');
+define('_MYMAPUSEWYSIWYG',				'Use scribite\'s WYSIWYG editor for the marker\'s description textarea');
 ?>

@@ -49,18 +49,19 @@ class mymap_admin_editConfigHandler
 								array('text' => '150m', 'value' => '0.15k'),
 								array('text' => '160m', 'value' => '0.16k'),
 								);
-		$render->assign('items_gpsbabelerror',$items_gpsbabelerror);
-		$render->assign('provider',pnModGetVar('MyMap','provider'));
-		$render->assign('gpsbabel',pnModGetVar('MyMap','gpsbabel'));
-		$render->assign('gpsbabelerror',pnModGetVar('MyMap','gpsbabelerror'));
-		$render->assign('key_google',pnModGetVar('MyMap','key_google'));
-		$render->assign('key_yahoo',pnModGetVar('MyMap','key_yahoo'));
-		$render->assign('key_multimap',pnModGetVar('MyMap','key_multimap'));
-		$render->assign('key_map24',pnModGetVar('MyMap','key_map24'));
-		$render->assign('key_mapquest',pnModGetVar('MyMap','key_mapquest'));
-		$render->assign('key_freeearth',pnModGetVar('MyMap','key_freeearth'));
-		$render->assign('notify',pnModGetVar('MyMap','notify'));
-		$render->assign('map_overview',pnModGetVar('MyMap','map_overview'));
+		$render->assign('items_gpsbabelerror',	$items_gpsbabelerror);
+		$render->assign('provider',				pnModGetVar('MyMap','provider'));
+		$render->assign('gpsbabel',				pnModGetVar('MyMap','gpsbabel'));
+		$render->assign('gpsbabelerror',		pnModGetVar('MyMap','gpsbabelerror'));
+		$render->assign('key_google',			pnModGetVar('MyMap','key_google'));
+		$render->assign('key_yahoo',			pnModGetVar('MyMap','key_yahoo'));
+		$render->assign('key_multimap',			pnModGetVar('MyMap','key_multimap'));
+		$render->assign('key_map24',			pnModGetVar('MyMap','key_map24'));
+		$render->assign('key_mapquest',			pnModGetVar('MyMap','key_mapquest'));
+		$render->assign('key_freeearth',		pnModGetVar('MyMap','key_freeearth'));
+		$render->assign('notify',				pnModGetVar('MyMap','notify'));
+		$render->assign('scribite',				pnModGetVar('MyMap','scribite'));
+		$render->assign('map_overview',			pnModGetVar('MyMap','map_overview'));
 		return true;
     }
     function handleCommand(&$render, &$args)
@@ -69,18 +70,19 @@ class mymap_admin_editConfigHandler
 		    if (!$render->pnFormIsValid()) return false;
 		    $obj = $render->pnFormGetValues();
 		    pnModDelVar('MyMap');
-		    pnModSetVar('MyMap','provider',$obj['provider']);
-		    pnModSetVar('MyMap','gpsbabel',$obj['gpsbabel']);
-		    pnModSetVar('MyMap','gpsbabelerror',$obj['gpsbabelerror']);
-		    pnModSetVar('MyMap','ownmaps',$obj['ownmaps']);
-		    pnModSetVar('MyMap','key_google',$obj['key_google']);
-		    pnModSetVar('MyMap','key_yahoo',$obj['key_yahoo']);
-		    pnModSetVar('MyMap','key_multimap',$obj['key_multimap']);
-		    pnModSetVar('MyMap','key_map24',$obj['key_map24']);
-		    pnModSetVar('MyMap','key_mapquest',$obj['key_mapquest']);
-		    pnModSetVar('MyMap','key_freeearth',$obj['key_freeearth']);
-		    pnModSetVar('MyMap','notify',$obj['notify']);
-		    pnModSetVar('MyMap','map_overview',$obj['map_overview']);
+		    pnModSetVar('MyMap',	'provider',			$obj['provider']);
+		    pnModSetVar('MyMap',	'gpsbabel',			$obj['gpsbabel']);
+		    pnModSetVar('MyMap',	'gpsbabelerror',	$obj['gpsbabelerror']);
+		    pnModSetVar('MyMap',	'ownmaps',			$obj['ownmaps']);
+		    pnModSetVar('MyMap',	'key_google',		$obj['key_google']);
+		    pnModSetVar('MyMap',	'key_yahoo',		$obj['key_yahoo']);
+		    pnModSetVar('MyMap',	'key_multimap',		$obj['key_multimap']);
+		    pnModSetVar('MyMap',	'key_map24',		$obj['key_map24']);
+		    pnModSetVar('MyMap',	'key_mapquest',		$obj['key_mapquest']);
+		    pnModSetVar('MyMap',	'key_freeearth',	$obj['key_freeearth']);
+		    pnModSetVar('MyMap',	'notify',			$obj['notify']);
+		    pnModSetVar('MyMap',	'scribite',			$obj['scribite']);
+		    pnModSetVar('MyMap',	'map_overview',		$obj['map_overview']);
 		    LogUtil::registerStatus(_MYMAPCONFIGUPDATED);
 			return pnRedirect(pnModURL('MyMap','admin','main'));
 		}
