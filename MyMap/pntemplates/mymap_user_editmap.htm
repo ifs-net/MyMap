@@ -1,0 +1,37 @@
+<!--[pnform]-->
+    <!--[pnformvalidationsummary]-->
+    
+    <!--[pnformlabel for="title" text="_MYMAPTITLE"]-->:<br />
+    <!--[pnformtextinput id="title" maxLength=40 mandatory=1]-->
+    <br /><br />
+    <!--[pnformlabel for="description" text="_MYMAPDESCRIPTION"]-->:<br />
+    <!--[pnformtextinput id="description" textMode="multiline"]-->
+    <br /><br />
+    <!--[pnformlabel for="width" text="_MYMAPWIDTH"]-->:<br />
+    <!--[pnformintinput id="width" mandatory="1"]-->
+    <br /><br />
+    <!--[pnformlabel for="heith" text="_MYMAPHEIGHT"]-->:<br />
+    <!--[pnformintinput id="height" mandatory="1"]-->
+    <br /><br />
+    <!--[pnformlabel for="zoomfactor" text="_MYMAPZOOMFACTOR"]-->:<br />
+    <!--[pnformintinput id="zoomfactor" mandatory="1"]-->
+    <br /><br />
+    <!--[pnformlabel for="wiki" text="_MYMAPWIKI"]-->?<br />
+    <!--[pnformdropdownlist id="wiki" items=$items_wiki]-->
+    <br /><br />
+    <!--[pnformlabel for="optionaltable" text="_MYMAPOPTIONALTABLE"]-->?<br />
+    <!--[pnformdropdownlist id="optionaltable" items=$items_optionaltable]-->
+    <br /><br />
+    <!--[pnformlabel for="maptype" text="_MYMAPMAPTYPE"]-->?<br />
+    <!--[pnformdropdownlist id="maptype" items=$items_maptype]-->
+    
+<!--[if $id gt 0]-->   
+    <br /><br />
+    <!--[pnformcheckbox id="deletemap" checked="0"]--><!--[pnformlabel for="deletemap" text="_MYMAPDELETEMAP"]--><br />
+<!--[/if]-->
+
+	<br /><br />
+	<!--[pnformbutton commandName="update" text="_MYMAPUPDATECREATEMAP"]-->
+<!--[/pnform]-->
+<br />
+<a href="<!--[pnmodurl modname="MyMap" type="user" func="main"]-->"><!--[pnml name="_MYMAPRETURNTOMAINPAGE"]--></a>

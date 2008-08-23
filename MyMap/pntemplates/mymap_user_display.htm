@@ -1,0 +1,71 @@
+<!--[include file="mymap_user_header.htm"]-->
+<h1><!--[pnml name=$map.title]--></h1>
+<!--[$map.description]--> (<!--[pnml name="_MYMAPAUTHOR"]-->: <!--[$uname|userprofilelink]-->)
+<br /><br />
+<!--[pnformvalidationsummary]-->
+
+<!--[*include file="mymap_user_display_map_ajax.htm"*]-->
+<!--[include file="mymap_user_display_map.htm"]-->
+
+<a name="overviewtable"></a>
+<!--[pnsecauthaction realm="0" comp="MyMap::" inst=".$map.id" level="ACCESS_ADMIN" assign="auth"]-->
+<!--[if $map.wiki eq 1 or $uid eq $map.uid or $auth]-->
+
+<img name="indicator_addmarkers" src="modules/MyMap/pnimages/show.gif" /> <a href="#" onClick="javascript:toggledisplay('mymap_hiddendiv_addmarkers','indicator_addmarkers'); return false" title="<!--[pnml name="_MYMAPSHOWADDPOINTS"]-->"><!--[pnml name="_MYMAPSHOWADDPOINTS"]--></a><br />
+<div id="mymap_hiddendiv_addmarkers">
+	<fieldset><legend><!--[pnml name="_MYMAPADDPOINTS"]--></legend>
+	<!--[pnml name="_MYMAPADDPOINTSEXPL"]-->
+	<!--[pnform]-->	    
+	    <!--[pnformlabel for="title" text="_MYMAPTITLE"]-->:<br />
+	    <!--[pnformtextinput id="title" maxLength=40 mandatory="1"]-->
+	    <br /><br />
+	    <!--[pnformlabel for="text" text="_MYMAPDESCRIPTION"]-->:<br />
+	    <!--[pnformtextinput id="text" textMode="multiline"]-->
+	    <br /><br />
+	    <!--[pnformlabel for="countrycode" text="_MYMAPCOUNTRYCODE"]-->:<br />
+	    <!--[pnformtextinput id="countrycode" maxLength="2" size="2"]-->
+	    <br /><br />
+	    <!--[pnformlabel for="postalcode" text="_MYMAPPOSTALCODE"]-->:<br />
+	    <!--[pnformtextinput maxLength="6" id="postalcode" minValue="0"]-->
+	    <br /><br />
+	    <!--[pnformlabel for="lat" text="_MYMAPLAT"]-->:<br />
+	    <!--[pnformfloatinput id="lat" minValue="-90" maxValue="90"]-->
+	    <br /><br />
+	    <!--[pnformlabel for="lng" text="_MYMAPLNG"]-->:<br />
+	    <!--[pnformfloatinput id="lng" minValue="-180" maxValue="180"]-->
+	    <br /><br />
+	    <!--[pnformlabel for="placename" text="_MYMAPPLACENAME"]-->:<br />
+	    <!--[pnformtextinput id="placename" maxLength="30"]-->
+	    <br /><br />
+	    <!--[pnformlabel for="date" text="_MYMAPDATE"]--><br />
+	    <!--[pnformdateinput id="date" mandatory="1" defaultValue="today"]-->
+	    <br /><br />
+	    <!--[pnformbutton commandName="update" text="_MYMAPUPDATECREATEPOINT"]-->
+	<!--[/pnform]-->
+	</fieldset>
+</div>
+<!--[/if]-->
+<!--[if $uid eq $map.uid or $auth]-->
+<img name="indicator_routemanagement" src="modules/MyMap/pnimages/show.gif" /> <a href="<!--[pnmodurl modname="MyMap" type="user" func="routes" mid=$map.id]-->"><!--[pnml name="_MYMAPROUTEMANAGEMENT"]--></a><br />
+<!--[/if]-->
+<!--[if ($map.optionaltable eq 1 or $uid eq $map.uid) and ($markers|@count gt 0)]-->
+<img name="indicator_overview" src="modules/MyMap/pnimages/show.gif" /> <a href="#" onClick="javascript:change('<!--[pnmodurl modname="MyMap" type="ajax" func="getOverviewTable" mid=$map.id]-->','overview');toggledisplay('mymap_hiddendiv_overview','indicator_overview'); return false" title="<!--[pnml name="_MYMAPSHOWOVERVIEW"]-->"><!--[pnml name="_MYMAPSHOWOVERVIEW"]--></a><br />
+<div id="mymap_hiddendiv_overview">
+	<fieldset><legend><!--[pnml name="_MYMAPPOINTSOVERVIEWEXPL"]--></legend>
+	<div id="overview">
+		<center><img src="modules/MyMap/pnimages/ajax.gif" /)></center>
+	</div>
+	</fieldset>
+</div>
+<div><br />
+<!--[/if]-->
+<!--[if $map.uid eq $uid]-->
+<h3><!--[pnml name="_MYMAPINSERTMAP"]-->?</h3>
+<!--[pnml name="_MYMAPINSERTMAPHOWTO"]-->:
+<br />
+<textarea>
+MYMAP<!--[$map.id]-->
+</textarea>
+</div>
+<!--[/if]-->
+<!--[include file="mymap_user_footer.htm"]-->	

@@ -1,0 +1,31 @@
+SVN:
+====
+
+1.1:
+====
+2008-08-23 by quan
+- included latest mapstraction.js
+- added scribite support
+- fixed bug for users not having js enabled
+2008-08-18 by quan:
+- removed Content plugin - this was very buggy. Please use
+  Multihook and the MyMap needle to integrate maps into
+  Content. Maybe another plugin will follow later....
+2008-08-17 by quan:
+- removed hook api and hook functionality and:
+- added needle support for MultiHook - it is simplier and 
+  better than a hook!
+  
+2008-02-28 by trudero:
+- Updated "mapstraction.js"
+  Including fix to hide markers without removing tracks.
+- Added asynchronous items download (AJAX/JSON)
+  Currently disabled (commented) out because
+  - download breaks if JSON exceedes ~4KB
+    => sequentially downloading multiple parts
+  - it is slower than the direcly integrated code
+
+
+1.0
+===
+- initial release
