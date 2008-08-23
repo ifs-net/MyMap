@@ -1,0 +1,64 @@
+<!--[include file="mymap_admin_header.htm"]-->
+
+<h1><!--[pnml name=_MYMAPMAINTITLE]--></h1>
+<!--[pnformvalidationsummary]-->
+
+<!--[pnml name="_MYMAPADMININTRO"]--><br /><br />
+<fieldset>
+<legend><!--[pnml name="_MYMAPMAINCONFIG"]--></legend>
+<!--[pnform]-->
+    <!--[pnformlabel for="provider" text="_MYMAPPROVIDER"]--><br />
+    <!--[pnformdropdownlist id="provider" items=$items_provider]-->
+    <br /><br />
+    <!--[pnformlabel for="key_google" text="_MYMAPKEYGOOGLE"]-->:<br />
+    <!--[pnformtextinput maxLength="120" id="key_google"]-->
+    <br /><br />
+    <!--[pnformlabel for="key_yahoo" text="_MYMAPKEYYAHOO"]-->:<br />
+    <!--[pnformtextinput maxLength="120" id="key_yahoo"]-->
+    <br /><br />
+	<!--[pnformlabel for="key_osm" text="_MYMAPKEYMAP24"]-->:<br />
+    <!--[pnformtextinput maxLength="120" id="key_map24"]-->
+    <br /><br />
+	<!--[pnformlabel for="key_mapquest" text="_MYMAPKEYMAPQUEST"]-->:<br />
+    <!--[pnformtextinput maxLength="120" id="key_mapquest"]-->
+    <br /><br />
+	<!--[pnformlabel for="key_mapquest" text="_MYMAPKEYMULTIMAP"]-->:<br />
+    <!--[pnformtextinput maxLength="120" id="key_multimap"]-->
+    <br /><br />
+    <!--[pnformcheckbox id="notify" checked="0"]--><!--[pnformlabel for="notify" text="_MYMAPNOTIFYOWNER"]--><br />
+    <br /><br />
+    <!--[pnformcheckbox id="map_overview" checked="0"]--><!--[pnformlabel for="map_overview" text="_MYMAPSHOWOVERVIEWMAP"]--><br />
+	<br /><br />
+	<!--[pnformlabel for="gpsbabel" text="_MYMAPGPSBABELPATH"]-->:<br />
+    <!--[pnformtextinput maxLength="120" id="gpsbabel"]-->
+    <br /><br />
+    <!--[pnformlabel for="gpsbabelerror" text="_MYMAPGPSBABELERROR"]--><br />
+    <!--[pnformdropdownlist id="gpsbabelerror" items=$items_gpsbabelerror]-->
+    <br /><br />
+     <!--[pnformbutton commandName="update" text="_MYMAPUPDATECONFIG"]-->
+<!--[/pnform]-->
+</fieldset>
+
+<fieldset>
+<legend><!--[pnml name="_MYMAPSUPPORTMYMAP"]--></legend>
+<!--[pnml name="_MYMAPDONATE"]-->
+<form name="_xclick" action="https://www.paypal.com/de/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick" />
+<input type="hidden" name="business" value="florian.schiessl@ifs-net.de" />
+<input type="hidden" name="item_name" value="Donation for the MyMaps module" />
+<select name="amount">
+<option value="5">5&nbsp;</option>
+<option value="10" selected="selected">10&nbsp;</option>
+<option value="15">15&nbsp;</option>
+<option value="20">20&nbsp;</option>
+<option value="25">25&nbsp;</option>
+</select>
+<select name="currency_code">
+<option value="USD" selected="selected">USD&nbsp;</option>
+<option value="EUR">EUR&nbsp;</option>
+</select>
+<input type="submit" name="submit" value="<!--[pnml name="_MYMAPDONATETHIS"]-->"/>
+</form>
+</fieldset>
+<br />
+<!--[include file="mymap_admin_footer.htm"]-->
