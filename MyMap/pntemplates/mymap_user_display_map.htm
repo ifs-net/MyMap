@@ -1,9 +1,9 @@
 <!--[* fullscreen mode*]-->
-<div id="mymap_closefullscreen<!--[$map.id]-->" class="mymap_closefullscreen"><a href="#" onclick="javascript:$('mymap_graybackground<!--[$map.id]-->').hide();$('map<!--[$map.id]-->').setStyle({width: '<!--[$map.width]-->px',height: '<!--[$map.height]-->px',position:'relative',left: '0px',top: '0px','margin-left': '0px','margin-top': '0px'});map<!--[$map.id]-->.resizeTo(<!--[$map.width]-->,<!--[$map.height]-->);$('mymap_closefullscreen<!--[$map.id]-->').hide();return false;" class="mymap_minimizelink"><!--[pnml name="_MYMAPMINIMIZE"]--></a></div>
-<div id="mymap_graybackground<!--[$map.id]-->" class="mymap_graybackground"></div>
+<div id="mymap_closefullscreen<!--[$map.id]-->" class="mymap_hidden mymap_closefullscreen"><a href="#" onclick="javascript:$('mymap_graybackground<!--[$map.id]-->').hide();$('map<!--[$map.id]-->').setStyle({width: '<!--[$map.width]-->px',height: '<!--[$map.height]-->px',position:'relative',left: '0px',top: '0px','margin-left': '0px','margin-top': '0px'});map<!--[$map.id]-->.resizeTo(<!--[$map.width]-->,<!--[$map.height]-->);$('mymap_closefullscreen<!--[$map.id]-->').hide();return false;" class="mymap_minimizelink"><!--[pnml name="_MYMAPMINIMIZE"]--></a></div>
+<div id="mymap_graybackground<!--[$map.id]-->" class="mymap_hidden mymap_graybackground"></div>
 <!--[* /fullscreen mode*]-->
 
-<div id="mapheader<!--[$map.id]-->" style="width:<!--[$map.width]-->px;" class="mymap_mapheader">
+<div id="mymap_mapheader<!--[$map.id]-->" style="width:<!--[$map.width]-->px;" class="mymap_hidden mymap_mapheader">
 	<div id="mymap_indicator_<!--[$map.id]-->" class="mymap_indicator"></div>
 	<div class="mymap_mapheader_title">
 		<i><strong><!--[$map.title]--></strong></i>
@@ -26,10 +26,14 @@
 		</div> <!-- mymap_menu -->
 	</div> <!-- mymap_menubox -->
 </div> <!-- mapheader -->
+<!--[* no script box *]-->
+<div id="mymap_noscript<!--[$map.id]-->" style="width:<!--[$map.width]-->px;height:<!--[$map.height]-->px;" class="mymap_noscriptbox">
+	<!--[pnml name="_MYMAPNOSCRIPTMESSAGE"]-->.
+</div>
 
 <div id="map<!--[$map.id]-->" class="mymap_map" style="width:<!--[$map.width]-->px;height:<!--[$map.height]-->px;"></div>
 
-<div id="mymap_export<!--[$map.id]-->" class="mymap_exportpopup">
+<div id="mymap_export<!--[$map.id]-->" class="mymap_hidden mymap_exportpopup">
 	<!--[pnml name="_MYMAPWAITFOREXPORT"]--><br /><br /><br /><br />
 	<img src="modules/MyMap/pnimages/ajax.gif" />
 </div>
@@ -38,6 +42,11 @@
 <script type="text/javascript">
 	$('mymap_mapcontrolbox<!--[$map.id]-->').hide();
 	$('mymap_export<!--[$map.id]-->').hide();
+	$('mymap_noscript<!--[$map.id]-->').hide();
+	$('mymap_export<!--[$map.id]-->').removeClassName('mymap_hidden');
+	$('mymap_closefullscreen<!--[$map.id]-->').removeClassName('mymap_hidden');
+	$('mymap_graybackground<!--[$map.id]-->').removeClassName('mymap_hidden');
+	$('mymap_mapheader<!--[$map.id]-->').removeClassName('mymap_hidden');
 	$('mymap_closefullscreen<!--[$map.id]-->').hide();
 	$('mymap_graybackground<!--[$map.id]-->').hide();
 </script>
