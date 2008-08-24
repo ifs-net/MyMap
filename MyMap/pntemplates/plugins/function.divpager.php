@@ -4,7 +4,7 @@
  *
  * @copyright (c) 2006, PostNuke Development Team
  * @link http://www.postnuke.com
- * @version $Id: function.pager.php 22821 2007-10-07 10:32:36Z rgasch $
+ * @version $Id$
  * @license GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  * @author Axel Guckelsberger
  * @author Drak
