@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package      MyMap
+ * @version      $Id$
+ * @author       Florian Schießl
+ * @link         http://www.ifs-net.de
+ * @copyright    Copyright (C) 2008
+ * @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ */
+ 
 // account settings panel
 define('_MYMAPMYMAPS',					'Meine Karten und Routen');	
 // needle and insert code part

@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package      MyMap
+ * @version      $Id$
+ * @author       Florian Schießl
+ * @link         http://www.ifs-net.de
+ * @copyright    Copyright (C) 2008
+ * @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ */
+ 
 // main
 define('_MYMAPMAINCONFIG',				'MyMap backend configuration');
 define('_MYMAPMAINTITLE',				'Administration interface for MyMap');
