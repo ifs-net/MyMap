@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package      MyMap
+ * @version      $Id$
+ * @author       Florian Schießl
+ * @link         http://www.ifs-net.de
+ * @copyright    Copyright (C) 2008
+ * @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ */
+ 
 // overview table in user-display
 define('_MYMAPEDIT',					'modifizieren');
 define('_MYMAPDELETE',					'löschen');

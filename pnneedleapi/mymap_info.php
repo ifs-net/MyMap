@@ -7,6 +7,15 @@
  * @copyright    Copyright (C) 2008
  * @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
  */
+ 
+/**
+ * @package      MyMap
+ * @version      $Id$
+ * @author       Florian Schieﬂl
+ * @link         http://www.ifs-net.de
+ * @copyright    Copyright (C) 2008
+ * @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ */
 
 /**
  * MyMap needle info
