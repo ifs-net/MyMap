@@ -12,7 +12,8 @@
  * @author sven schomacker, modifier by florian schiessl
  * @version 2.1
  *
- * This plugin checks current version for scribite (func="version") or will
+ * This plugin checks current version for a given 
+ * ifs-net programmed module and will
  * check if a newer version is available for download.
  */
 
