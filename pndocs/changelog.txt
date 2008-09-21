@@ -1,5 +1,7 @@
 SVN:
 ====
+2008-09-21 by quan
+- bugfix to make needle usable in module Content
 2008-08-25 by quan
 - added version control. Fetches latest version from 
   ifs-net.de and compares it with local installation
