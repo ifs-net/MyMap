@@ -463,6 +463,9 @@ function MyMap_userapi_getCodeForMap($args)
     else $map_overview = 'false';
     $render->assign('map_overview',	$map_overview);
     $content = $render->fetch('mymap_user_display_map.htm');
+	// we need to avoid linebreaks to get the needle running with content later...
+    $br = array("<br>","<br/>","<br />","\n","\r","\r\n","\n\r");
+    $content = str_replace($br,'',$content);
 	// add the MyMap specific javascripts
   	pnModAPIFunc('MyMap','user','addMapJS');
   	
