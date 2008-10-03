@@ -340,11 +340,15 @@ function MyMap_userapi_addMapJS()
 /**
  * generate an on-the-fly map
  * 
+ * @param	$args['lat']	string		id of lat field
+ * @param	$args['lng']	string		id of lng field
  * @return       output
  */
 function MyMap_userapi_generateMap($args)
 {
-	$markers = $args['coords'];
+  	$lat 		= $args['lat'];
+  	$lng 		= $args['lng'];
+	$markers 	= $args['coords'];
 
 	// set some data for the non existent map
 	$center = pnModAPIFunc('MyMap','user','getCenter',$markers);
@@ -364,13 +368,21 @@ function MyMap_userapi_generateMap($args)
 	pnModLangLoad('MyMap');
 	// Create output object
 	$render = pnRender::getInstance('MyMap');
-	$render->assign('map',$map);
+	$render->assign('map',		$map);
 	$render->assign('clickzoom','1');
-	$render->assign('provider',pnModGetVar('MyMap','provider'));
-	$render->assign('markers',$markers);
-	if (pnModGetVar('MyMap','map_overview') == 1) $map_overview='true';
-	else $map_overview='false';
+	$render->assign('provider',	pnModGetVar('MyMap','provider'));
+	$render->assign('markers',	$markers);
+	if (pnModGetVar('MyMap','map_overview') == 1) $map_overview = 'true';
+	else $map_overview = 'false';
 	$render->assign('map_overview',$map_overview);
+
+  	if (isset($lat) && isset($lng) && (strlen($lat) > 0) && (strlen($lng) > 0)) {
+  	  	// this part is needed to let mymap know how the input fields are 
+		// named where the value should be inserted into
+	    $render->assign('lat',	$lat);
+	    $render->assign('lng',	$lng);
+	}
+
 	//return $render->fetch('mymap_user_display_map_ajax.htm');
 	return $render->fetch('mymap_user_display_map.htm');
 }
