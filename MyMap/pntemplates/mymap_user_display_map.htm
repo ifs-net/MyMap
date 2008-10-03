@@ -96,7 +96,11 @@
 <!--[if $clickzoom eq 1]-->
 	map<!--[$map.id]-->.setCenterAndZoom(p,newZoom);
 <!--[/if]-->
-	<!--[if $hook ne "1"]-->
+	<!--[* if $hook ne "1" *]-->
+	<!--[if $lat ne "" and $lng ne ""]-->
+	document.getElementById("<!--[$lat]-->").value = coords[0];	   
+	document.getElementById("<!--[$lng]-->").value = coords[1];
+	<!--[else]-->
 	document.getElementById("lat").value = coords[0];	   
 	document.getElementById("lng").value = coords[1];
 	<!--[/if]-->

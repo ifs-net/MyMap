@@ -1,5 +1,8 @@
 SVN:
 ====
+2008-10-03 by quan
+- added some features to use mymap as clickable map in forms 
+  to retrieve coordinates this way (used in MyProfile 1.1/svn)
 2008-09-21 by quan
 - bugfix to make needle usable in module Content
 2008-08-25 by quan
