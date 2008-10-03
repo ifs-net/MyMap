@@ -351,6 +351,9 @@ function MyMap_userapi_generateMap($args)
   	$lng 		= $args['lng'];
 	$markers 	= $args['coords'];
 
+	// maybe there is jsut one marker?
+	if (!is_array($markers[0])) $markers = array($markers);
+
 	// set some data for the non existent map
 	$center = pnModAPIFunc('MyMap','user','getCenter',$markers);
 	$map = array(
