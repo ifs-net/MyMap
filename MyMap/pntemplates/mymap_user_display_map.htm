@@ -66,10 +66,12 @@
 <!--[if $markers|@count gt 0]-->
 	function drawMarkers<!--[$map.id]-->() {
 	<!--[foreach from=$markers item="marker"]-->
+		<!--[if $marker.lat ne "" and $marker.lng ne ""]-->
 	var marker<!--[$marker.id]--> = new Marker( new LatLonPoint(<!--[$marker.lat]-->,<!--[$marker.lng]-->));
 	marker<!--[$marker.id]-->.setLabel("<!--[$marker.title]-->");
 		<!--[if $marker.title ne "" or $marker.text ne ""]-->	
 	marker<!--[$marker.id]-->.setInfoBubble("<strong><!--[$marker.title|escape:javascript|pnvarprepfordisplay]--></strong>:<br /><!--[$marker.text|escape:javascript]--><!--[if $marker.placename ne "" and $marker.id gt 0]--><hr /><small><!--[$marker.placename]--> <!--[/if]--><!--[if ($map.optionaltable eq 1  and $marker.id gt 0) or ($uid eq $map.uid and $marker.id gt 0)]--><br /><a href=<!--[pnmodurl modname="MyMap" type="user" func="display" command="edit" authid=$authid mid=$map.id id=$marker.id]--> >[<!--[pnml name="_MYMAPEDIT"]-->]</a>, <a href=<!--[pnmodurl modname="MyMap" type="user" func="display" command="delete" authid=$authid mid=$map.id pid=$marker.id]--> onclick=\"return confirm('<!--[pnml name="_MYMAPREALLYDELETE"]-->')\">[<!--[pnml name="_MYMAPDELETE"]-->]</a></small><!--[/if]-->");
+			<!--[/if]-->
 		<!--[/if]-->
 	map<!--[$map.id]-->.addMarker(marker<!--[$marker.id]-->);
 	<!--[/foreach]-->
