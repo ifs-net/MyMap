@@ -342,6 +342,7 @@ function MyMap_userapi_addMapJS()
  * 
  * @param	$args['lat']	string		id of lat field
  * @param	$args['lng']	string		id of lng field
+ * @param	$args['coords']	array		coordinates
  * @return       output
  */
 function MyMap_userapi_generateMap($args)
