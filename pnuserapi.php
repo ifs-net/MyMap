@@ -200,7 +200,11 @@ function MyMap_userapi_getCenter($coords)
 		$lat+=$coord['lat'];
 		$i++;
 	}
-	if ($i==0) return array('lat' => 50, 'lng' => 12);
+	if ($i==0) return array(
+			'lat' => 50, 
+			'lng' => 12, 
+			'error' => 1
+		);
 	$lng=$lng/$i;
 	$lat=$lat/$i;
 	$lat=$lat+0.33;
@@ -350,22 +354,25 @@ function MyMap_userapi_generateMap($args)
   	$lat 		= $args['lat'];
   	$lng 		= $args['lng'];
 	$markers 	= $args['coords'];
+	if ($markers == "") unset($markers);
 
 	// maybe there is jsut one marker?
-	if (!is_array($markers[0])) $markers = array($markers);
+	if (!is_array($markers[0]) && (count($markers) > 0)) $markers = array($markers);
 
 	// set some data for the non existent map
 	$center = pnModAPIFunc('MyMap','user','getCenter',$markers);
 	$map = array(
 			'centerlat'		=> $center['lat'],
 			'centerlng'		=> $center['lng'],
-			'id'			=> 0,
+			'id'			=> rand(1,999999999),
 			'optionaltable'	=> 0,
 			'width'			=> $args['width'],
 			'height'		=> $args['height'],
 			'zoomfactor'	=> $args['zoomfactor'],
 			'maptype'		=> $args['maptype']
 			);
+	// show the whole world if there is no marker
+	if ($center['error'] == 1) $map['zoomfactor'] = 13;
 	
 	// We need some javascript and language files
 	pnModAPIFunc('MyMap','user','addMapJS');
@@ -375,7 +382,7 @@ function MyMap_userapi_generateMap($args)
 	$render->assign('map',		$map);
 	$render->assign('clickzoom','1');
 	$render->assign('provider',	pnModGetVar('MyMap','provider'));
-	$render->assign('markers',	$markers);
+	if (!($center['error'] == 1)) $render->assign('markers',	$markers);
 	if (pnModGetVar('MyMap','map_overview') == 1) $map_overview = 'true';
 	else $map_overview = 'false';
 	$render->assign('map_overview',$map_overview);
