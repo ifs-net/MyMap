@@ -1,5 +1,8 @@
 SVN:
 ====
+
+1.2:
+====
 2008-10-05 by quan
 - fixed several bugs... see trac (code.zikula.org) for details
 2008-10-03 by quan
