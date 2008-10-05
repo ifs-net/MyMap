@@ -1,5 +1,7 @@
 SVN:
 ====
+2008-10-05 by quan
+- fixed several bugs... see trac (code.zikula.org) for details
 2008-10-03 by quan
 - added some features to use mymap as clickable map in forms 
   to retrieve coordinates this way (used in MyProfile 1.1/svn)
