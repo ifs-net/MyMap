@@ -12,7 +12,7 @@
 // for display and upgrade purposes
 $modversion['name']           = pnVarPrepForDisplay('MyMap');
 // the version string must not exceed 10 characters!
-$modversion['version']        = '1.1';
+$modversion['version']        = '1.2';
 $modversion['description']    = pnVarPrepForDisplay('Geographical maps with routes and markers for everybody'); 
 $modversion['displayname']    = pnVarPrepForDisplay('MyMap');
 
