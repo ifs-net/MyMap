@@ -69,7 +69,8 @@ function MyMap_upgrade($oldversion)
 		        LogUtil::registerError('_MYMAPHOOKDELETEFAILED');
 		        return false;
 		    }
-	        break;
+		case 1.1:
+		case 1.2:
     }
 
     // Update successful
