@@ -79,7 +79,7 @@ function MyMap_ajax_export()
 	if (isset($mid) && ($mid>0)) $map = pnModAPIFunc('MyMap','user','getMaps',array('id'=>$mid));
 	if (!isset($mid) || (!($mid>0)) || (empty($map))) {
 		logUtil::registerError(_MYMAPMAPNOTFOUND);
-		return pnRedirect(pnModURL('MyMap','user','main'));
+		return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','main'));
 	}
 	
 	$render = pnRender::getInstance('MyMap');

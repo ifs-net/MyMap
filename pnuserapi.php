@@ -397,6 +397,8 @@ function MyMap_userapi_generateMap($args)
 	// we should add our scripts and stylesheets..
 	pnModAPIFunc('MyMap','user','addMapJS');
 
+	$render->assign('onthefly',1);
+
 	//return $render->fetch('mymap_user_display_map_ajax.htm');
 	return $render->fetch('mymap_user_display_map.htm');
 }
