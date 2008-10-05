@@ -1,0 +1,18 @@
+<!--[pnml name="_MYMAPNOTIFYINTRO"]-->
+
+<!--[pnml name="_MYMAPNOTIFYAFFECTEDMAP"]-->:
+
+<!--[pnml name="_MYMAPMAPID"]-->: <!--[$map.id]-->
+<!--[pnml name="_MYMAPMAPTITLEOFYOURMAP"]-->: <!--[$map.title]-->
+
+<!--[pnml name="_MYMAPNEWMARKERTITLE"]-->: <!--[$marker.title]-->
+<!--[pnml name="_MYMAPNEWMARKERTEXT"]-->: <!--[$marker.text]-->
+<!--[pnml name="_MYMAPLAT"]-->: <!--[$marker.lat]-->
+<!--[pnml name="_MYMAPLNG"]-->: <!--[$marker.lng]-->
+<!--[pnml name="_MYMAPDATE"]-->: <!--[$marker.date]-->
+
+<!--[pnml name="_MYMAPADDEDBY"]-->: <!--[pnusergetvar name="uname" uid=$marker.uid]--> (<!--[pnml name="_MYMAPUSERID"]-->: <!--[$marker.uid]-->).
+
+<!--[pnml name="_MYMAPMAPLINK"]-->: <!--[pngetbaseurl]--><!--[pnmodurl modname="MyMap" type="user" func="display" mid=$map.id]-->
+
+<!--[pnml name="_MYMAPDONOTREPLY"]-->
