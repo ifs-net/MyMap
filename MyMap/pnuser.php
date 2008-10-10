@@ -323,7 +323,7 @@ class mymap_user_routesHandler
 			// first check if coordinates are given as argument
 			$lat = (float)$obj['lat'];
 			$lng = (float)$obj['lng'];
-			if (isset($lat) && isset($lng)) {
+			if (isset($lat) && isset($lng) && ($lat != '') && ($lng != '')) {
 				$obj['mid'] = $this->id;
 				if (DBUtil::insertObject($obj,'mymap_waypoints')) logUtil::registerStatus(_MYMAPWAYPOINTADDED);
 				else logUtil::registerError(_MYMAPWAYPOINTERROR);
