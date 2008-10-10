@@ -22,25 +22,23 @@ function MyMap_userdeletionapi_delUser($args)
 	  	$result 	= _NOTHINGDELETEDNOAUTH;
 	}
 	else {
+	  	pnModLangLoad('MyMap','user');
 	  	// Here you should write your userdeletion routine.
 	  	// Delete your database entries or anonymize them.
-	  	$tables = pnDBGettables();
+	  	$tables = pnDBGetTables();
 	  	// maps
-	  	$column = $tables['mymap_column'];
-	  	$where = $column['uid']." = ".$uid;
-	  	DBUtil::deleteWhere('mymap',$where);
-	  	// markers
+	  	//delete maps using API
+	  	$maps = pnModAPIFunc('MyMap','user','getMaps',array('uid' => $uid));
+	  	foreach ($maps as $map) pnModAPIFunc('MyMap','user','deleteMap',array('id' => $map['id']));
+
+	  	// additional markers a user might have made
 	  	$column = $tables['mymap_markers_column'];
 	  	$where = $column['uid']." = ".$uid;
-	  	DBUtil::deleteWhere('mymap',$where);
-	  	// waypoints
-	  	$column = $tables['mymap_waypoints_column'];
-	  	$where = $column['uid']." = ".$uid;
-	  	DBUtil::deleteWhere('mymap',$where);
+	  	DBUtil::deleteWhere('mymap_markers',$where);
 	}
 	return array(
-			'title' 	=> _MYPROFILEMODULETITLE,
-			'result'	=> $result
+			'title' 	=> _MYPROFILEMAPSDELETEDFOR,
+			'result'	=> pnUserGetVar('uname',$uid)
 
 		);
 }
