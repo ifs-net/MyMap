@@ -1,6 +1,15 @@
 SVN:
 ====
 
+1.3:
+====
+- all shorturl (directory based) - problems should be solved now
+- please see the following changeset if you use Zikula <= 1.0.2
+  and your waypoints are not stored with decimals as a real float
+  http://code.zikula.org/core/changeset/24729
+- some icons added to make the look more nicer
+- and some more bugs fixed...
+
 1.2:
 ====
 2008-10-05 by quan
