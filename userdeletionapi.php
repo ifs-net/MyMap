@@ -1,7 +1,7 @@
 <?php
 /**
  * @package      MyMap
- * @version      $Id: pnajax.php 103 2008-10-05 16:35:10Z quan $
+ * @version      $Id$
  * @author       Florian Schießl
  * @link         http://www.ifs-net.de
  * @copyright    Copyright (C) 2008
