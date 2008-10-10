@@ -1,0 +1,18 @@
+<!--[include file="mymap_user_header.htm"]-->
+<h1><!--[pnml name="_MYMAPWELCOMETOMYMAP"]--></h1>
+<!--[pnml name="_MYMAPEXPLAINMYMAP"]--><br /><br />
+<img src="images/icons/small/add.gif" /> <a href="<!--[pnmodurl modname="MyMap" type="user" func="editMap"]-->"><!--[pnml name="_MYMAPADDNEWMAP"]--></a>
+
+<h1><!--[pnml name="_MYMAPMYMAPS"]--></h1>
+<!--[pnml name="_MYMAPMANAGEMAPS"]-->
+
+<ul>
+<!--[foreach from=$maps item="map"]-->
+	<li><strong><!--[$map.title]-->:</strong> [id: <!--[$map.id]-->]<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/icons/extrasmall/edit.gif" /> <a href="<!--[pnmodurl modname="MyMap" type="user" func="display" mid=$map.id]-->"><!--[pnml name="_MYMAPSHOW"]--></a>, <img src="images/icons/extrasmall/configure_shortcuts.gif" /> <a href="<!--[pnmodurl modname="MyMap" type="user" func="editMap" id=$map.id]-->"><!--[pnml name="_MYMAPEDIT"]--></a></li>
+<!--[foreachelse]-->
+	<li><!--[pnml name="_MYMAPNOMAP"]--></li>
+<!--[/foreach]-->
+</ul>
+
+<!--[include file="mymap_user_footer.htm"]-->
