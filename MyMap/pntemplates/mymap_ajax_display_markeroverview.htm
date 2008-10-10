@@ -22,8 +22,8 @@
 		<td>
 		<!--[* we just need the edit links if the user is the owner of the marker or the whole map *]-->
 		<!--[if $map.uid eq $uid or $uid eq $marker.uid ]-->
-			<a href="<!--[pnmodurl modname="MyMap" type="user" func="display" command="edit" mid=$map.id id=$marker.id]-->"><!--[pnml name="_MYMAPEDIT"]--></a>,
-			<a href="<!--[pnmodurl modname="MyMap" type="user" func="display" command="delete" mid=$map.id pid=$marker.id authid=$authid]-->" onclick="return confirm('<!--[pnml name="_MYMAPREALLYDELETE"]-->')"><!--[pnml name="_MYMAPDELETE"]--></a></td>
+			<a href="<!--[pnmodurl fqurl="true" modname="MyMap" type="user" func="display" command="edit" mid=$map.id id=$marker.id]-->"><!--[pnml name="_MYMAPEDIT"]--></a>,
+			<a href="<!--[pnmodurl fqurl="true" modname="MyMap" type="user" func="display" command="delete" mid=$map.id pid=$marker.id authid=$authid]-->" onclick="return confirm('<!--[pnml name="_MYMAPREALLYDELETE"]-->')"><!--[pnml name="_MYMAPDELETE"]--></a></td>
 		<!--[/if]-->
 		</tr>
 	<!--[/foreach]-->
