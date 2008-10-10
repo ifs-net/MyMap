@@ -36,7 +36,8 @@ function MyMap_ajax_getOverviewTable()
 	$render->assign('limit',$pagerlimit);
 	$render->assign('markers',$selection);
 	$render->assign('uid',pnUserGetVar('uid'));
-	$render->display('mymap_ajax_display_markeroverview.htm');
+	$output = $render->fetch('mymap_ajax_display_markeroverview.htm');
+	echo DataUtil::convertToUTF8($output);
 	return true;
 }
 
@@ -54,7 +55,8 @@ function MyMap_ajax_loadWaypoints()
 	$render = pnRender::getInstance('MyMap');
 	$render->assign('waypoints',pnModAPIFunc('MyMap','user','getWayPoints',array('mid'=>$mid)));
 	$render->assign('mid',$mid);
-	$render->display('mymap_ajax_display_waypoints.htm');
+	$output = $render->fetch('mymap_ajax_display_waypoints.htm');
+	echo DataUtil::convertToUTF8($output);
 	return true;
 }
 
@@ -91,7 +93,8 @@ function MyMap_ajax_export()
 	} else {
 		$render->assign('xmltext', "Unknown format: $format");
 	}
-	$render->display('mymap_user_export.htm');
+	$output = $render->fetch('mymap_user_export.htm');
+	echo DataUtil::convertToUTF8($output);
 	return true;
 }
 
