@@ -193,8 +193,8 @@ function MyMap_userapi_getGPXimport($args)
 function MyMap_userapi_getCenter($coords)
 {
 	$i=0;
-	$lng=0.0;
-	$lat=0.0;
+	$lng=(float)0.0;
+	$lat=(float)0.0;
 	foreach ($coords as $coord) {
 		$lng+=$coord['lng'];
 		$lat+=$coord['lat'];
@@ -208,6 +208,9 @@ function MyMap_userapi_getCenter($coords)
 	$lng=$lng/$i;
 	$lat=$lat/$i;
 	$lat=$lat+0.33;
+	// replace , with . if neccesarry
+	$lat = str_replace(',','.',$lat);
+	$lng = str_replace(',','.',$lng);
 	return array ('lat'=>$lat,'lng'=>$lng);
 }
 
