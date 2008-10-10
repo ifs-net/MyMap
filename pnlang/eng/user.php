@@ -120,4 +120,6 @@ define('_MYMAPMAPLINK',					'See the map');
 define('_MYMAPDONOTREPLY',				'Please do not reply to this email! This is just an automatical generated text...');
 define('_MYMAPUSERID',					'User-ID');
 define('_MYMAPSUBJECT',					'Your map has been modified');
+// userdeletion support
+define('_MYPROFILEMAPSDELETEDFOR',		'All maps deleted for Account');
 ?>

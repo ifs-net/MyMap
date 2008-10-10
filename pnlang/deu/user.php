@@ -121,4 +121,6 @@ define('_MYMAPMAPLINK',					'Karte ansehen');
 define('_MYMAPDONOTREPLY',				'Bitte nicht auf dieses Email antworten. Es handelt sich lediglich um ein automatisch generiertes Email');
 define('_MYMAPUSERID',					'Benutzer-ID');
 define('_MYMAPSUBJECT',					'Ihre Karte wurde verändert');
+// userdeletion support
+define('_MYPROFILEMAPSDELETEDFOR',		'Alle Karten gelöscht vom User');
 ?>
