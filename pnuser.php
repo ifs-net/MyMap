@@ -55,7 +55,7 @@ function MyMap_user_routes()
 		if (pnModAPIFunc('MyMap','user','deleteLastWaypoint',array('mid'=>$map['id'])))logUtil::registerStatus(_MYMAPWAYPOINTDELETED);
 		else logUtil::registerError(_MYMAPWAYPOINTSDELETIONERROR);
 	}
-	if (isset($action)) pnRedirect(pnModURL('MyMap','user','routes',array('mid'=>$map['id'])));
+	if (isset($action)) pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','routes',array('mid'=>$map['id'])));
 
 	// get the map's center point
 	$markers = pnModAPIFunc('MyMap','user','getMarkers',array('mid'=>$mid));
@@ -66,7 +66,7 @@ function MyMap_user_routes()
 
 	// Create output object
 	$render = FormUtil::newpnForm('MyMap');
-	$map['url_wps'] = pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
+	$map['url_wps'] = pnGetBaseURL().pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
 	$render->assign('map',$map);
 	$render->assign('markers',$markers);
 	$render->assign('waypoints',$waypoints);
@@ -91,7 +91,7 @@ function MyMap_user_display()
 	if (isset($mid) && ($mid>0)) $map = pnModAPIFunc('MyMap','user','getMaps',array('id'=>$mid));
 	if (!isset($mid) || (!($mid>0)) || (empty($map))) {
 		logUtil::registerError(_MYMAPMAPNOTFOUND);
-		return pnRedirect(pnModURL('MyMap','user','main'));
+		return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','main'));
 	}
 	
 	// get the map's center point
@@ -102,7 +102,7 @@ function MyMap_user_display()
 	$map['centerlng'] 	= $center['lng'];
 	
 	// we need this info for ajax waypoints loading
-	$map['url_wps'] 	= pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
+	$map['url_wps'] 	= pnGetBaseURL().pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
 	
 	// is there a delete-action called?
 	$command = FormUtil::getPassedValue('command');
@@ -120,7 +120,7 @@ function MyMap_user_display()
 			}
 			else LogUtil::registerError(_MYMAPPOINTDELETIONERROR);
 		}
-		return pnRedirect(pnModURL('MyMap','user','display',array('mid'=>$mid)));
+		return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','display',array('mid'=>$mid)));
 	}
 
 	// We need some javascript
@@ -244,7 +244,7 @@ class mymap_user_editPointHandler
 					}
 				}
 			}
-			return pnRedirect(pnModURL('MyMap','user','display',array('mid'=>$obj['mid'])));
+			return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','display',array('mid'=>$obj['mid'])));
 		}
 		return true;
     }
@@ -288,7 +288,7 @@ class mymap_user_editMapHandler
 				$delResult = pnModAPIFunc('MyMap','user','deleteMap',array('id'=>$obj['id']));
 				if ($delResult) logUtil::registerStatus(_MYMAPMAPDELETED);
 				else logUtil::registerStatus(_MYMAPMAPDELETIONERROR);
-				return pnRedirect(pnModURL('MyMap','user','main'));
+				return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','main'));
 			}
 
 			if ($obj['id']>0) {
@@ -300,7 +300,7 @@ class mymap_user_editMapHandler
 				DBUtil::insertObject($obj, 'mymap');
 				LogUtil::registerStatus(_MYMAPMAPCREATED);
 			}
-			return pnRedirect(pnModURL('MyMap','user','main'));
+			return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','main'));
 		}
 		return true;
     }
@@ -340,7 +340,7 @@ class mymap_user_routesHandler
 				if (pnModAPIFunc('MyMap','user','getGPXImport',array('filename'=>$filename,'mid'=>$this->id))) logUtil::registerStatus(_MYMAPIMPORTSUCCESSFULL);
 				else logUtil::registerStatus(_MYMAPIMPORTERROR);
 			}
-			return pnRedirect(pnModURL('MyMap','user','routes',array('mid'=>$this->id)));
+			return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','routes',array('mid'=>$this->id)));
 		}
 		return true;
     }
