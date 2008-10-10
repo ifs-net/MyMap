@@ -49,7 +49,7 @@
 <img name="indicator_routemanagement" src="<!--[pngetbaseurl]-->modules/MyMap/pnimages/show.gif" /> <a href="<!--[pnmodurl modname="MyMap" type="user" func="routes" mid=$map.id]-->"><!--[pnml name="_MYMAPROUTEMANAGEMENT"]--></a><br />
 <!--[/if]-->
 <!--[if ($map.optionaltable eq 1 or $uid eq $map.uid) and ($markers|@count gt 0)]-->
-<img name="indicator_overview" src="<!--[pngetbaseurl]-->modules/MyMap/pnimages/show.gif" /> <a href="#" onClick="javascript:change('<!--[pnmodurl modname="MyMap" type="ajax" func="getOverviewTable" mid=$map.id]-->','overview');toggledisplay('mymap_hiddendiv_overview','indicator_overview'); return false" title="<!--[pnml name="_MYMAPSHOWOVERVIEW"]-->"><!--[pnml name="_MYMAPSHOWOVERVIEW"]--></a><br />
+<img name="indicator_overview" src="<!--[pngetbaseurl]-->modules/MyMap/pnimages/show.gif" /> <a href="#" onClick="javascript:change('<!--[pnmodurl fqurl="true" modname="MyMap" type="ajax" func="getOverviewTable" mid=$map.id]-->','overview');toggledisplay('mymap_hiddendiv_overview','indicator_overview'); return false" title="<!--[pnml name="_MYMAPSHOWOVERVIEW"]-->"><!--[pnml name="_MYMAPSHOWOVERVIEW"]--></a><br />
 <div id="mymap_hiddendiv_overview">
 	<fieldset><legend><!--[pnml name="_MYMAPPOINTSOVERVIEWEXPL"]--></legend>
 	<div id="overview">
