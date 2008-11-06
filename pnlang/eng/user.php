@@ -11,6 +11,8 @@
 // account settings panel
 define('_MYMAPMYMAPS',					'My maps and routes');	
 // needle / code part
+define('_MYMAPINTEGRATIONPROBLEMS',		'If this map is integrated into another content and is not display correctly and javascript is enabled then');
+define('_MYMAPDISPLAYMAPONSEPARATEPAGE','click here to display the map on a single page');
 define('_MYMAPNOSCRIPTMESSAGE',			'Please enable javascript to see the map that should be displayed here');
 define('_MYMAPMAPNOTFOUND',				'Map with given ID not found');
 define('_MYMAPHOOKREGISTERFAILED',		'Hook initialisation failed');
