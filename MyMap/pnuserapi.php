@@ -489,7 +489,6 @@ function MyMap_userapi_getCodeForMap($args)
     $render->assign('markers',		$markers);
     $render->assign('waypoints',	$waypoints);
     $render->assign('provider',		pnModGetVar('MyMap','provider'));
-//I do not know what I meant here... We'll remove it from now on				    $render->assign('hook',	'1');
     if (pnModGetVar('MyMap','map_overview') == 1) $map_overview = 'true';
     else $map_overview = 'false';
     $render->assign('map_overview',	$map_overview);
