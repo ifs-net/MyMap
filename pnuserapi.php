@@ -482,17 +482,22 @@ function MyMap_userapi_getCodeForMap($args)
 	$map['centerlat'] 	= $center['lat'];
 	$map['centerlng'] 	= $center['lng'];
 	$map['url_wps'] 	= pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
-    $render 	= pnRender::getInstance('MyMap');
-    $render->assign('map', 			$map);
-    $render->assign('uid', 			pnUserGetVar('uid'));
-    $render->assign('clickzoom',	'0');
-    $render->assign('markers',		$markers);
-    $render->assign('waypoints',	$waypoints);
-    $render->assign('provider',		pnModGetVar('MyMap','provider'));
+	
     if (pnModGetVar('MyMap','map_overview') == 1) $map_overview = 'true';
     else $map_overview = 'false';
-    $render->assign('map_overview',	$map_overview);
+    $render 	= pnRender::getInstance('MyMap');
+    $vars = array (
+	    	'map'			=> $map,
+	    	'uid' 			=> pnUserGetVar('uid'),
+			'clickzoom'		=> '0',
+			'markers'		=> $markers,
+			'waypoints'		=> $waypoints,
+			'provider'		=> pnModGetVar('MyMap','provider'),
+			'map_overview'	=> $map_overview
+		);
+    $render->assign($vars);
     $content = $render->fetch('mymap_user_display_map.htm');
+    
 	// we need to avoid linebreaks to get the needle running with content later...
     $br = array("<br>","<br/>","<br />","\n","\r","\r\n","\n\r");
     $content = str_replace($br,'',$content);
