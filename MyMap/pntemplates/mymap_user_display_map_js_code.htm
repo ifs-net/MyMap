@@ -37,7 +37,7 @@
 <!--[/if]-->
 
 <!--[if $waypoints|@count gt 1]-->
-	change('<!--[$map.url_wps]-->','mymap_wps_<!--[$map.id]-->');
+	change(document.location.pnbaseURL + '<!--[$map.url_wps]-->','mymap_wps_<!--[$map.id]-->');
 <!--[elseif $waypoints|@count eq 1]-->
 	<!--[foreach from=$waypoints item="waypoint"]-->
 	var markerX<!--[$waypoint.id]--> = new Marker( new LatLonPoint(<!--[$waypoint.lat]-->,<!--[$waypoint.lng]-->));
