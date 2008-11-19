@@ -66,7 +66,7 @@ function MyMap_user_routes()
 
 	// Create output object
 	$render = FormUtil::newpnForm('MyMap');
-	$map['url_wps'] = pnGetBaseURL().pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
+	$map['url_wps'] = pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
 	$render->assign('map',$map);
 	$render->assign('markers',$markers);
 	$render->assign('waypoints',$waypoints);
@@ -102,7 +102,7 @@ function MyMap_user_display()
 	$map['centerlng'] 	= $center['lng'];
 	
 	// we need this info for ajax waypoints loading
-	$map['url_wps'] 	= pnGetBaseURL().pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
+	$map['url_wps'] 	= pnmodurl('MyMap','ajax','loadWaypoints',array('mid'=>$map['id']));
 	
 	// is there a delete-action called?
 	$command = FormUtil::getPassedValue('command');
