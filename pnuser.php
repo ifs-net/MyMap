@@ -201,6 +201,10 @@ class mymap_user_editPointHandler
 			if ($this->id > 0) $obj['id']=$id;
 			if (!isset($obj['lng']) || (!isset($obj['lat']))) {
 				$coord=pnModAPIFunc('MyMap','user','getCoord',$obj);
+				if (!$coord) {
+				  	LogUtil::registerError(_MYMAPCOORDNOTRETRIEVABLE);
+				  	return false;
+				}
 				srand(microtime()*1000000);
 				if (count($coord)==1) {
 					$c=$coord[0];
@@ -212,6 +216,7 @@ class mymap_user_editPointHandler
 					// shuffle a little bit... lat +- 0.004 lng +- 0.004
 					$obj['lat']+=0.00001*(rand(1,800)-400);
 					$obj['lng']+=0.00001*(rand(1,800)-400);
+					LogUtil::registerStatus(_MYPROFILECOORDRETRIEVED.': LAT ['.$obj['lat'].'] - LNG ['.$obj['lng'].']');
 				}
 				else {
 					foreach ($coord as $c) $coords.=$c['postalcode'].' '.$c['placename'].' ('.$c['countrycode'].', '.$c['adminname1'].'), ';
@@ -243,8 +248,8 @@ class mymap_user_editPointHandler
 						LogUtil::registerStatus(_MYMAPNOTIFYSENT);
 					}
 				}
+				return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','display',array('mid'=>$obj['mid'])));
 			}
-			return pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','display',array('mid'=>$obj['mid'])));
 		}
 		return true;
     }

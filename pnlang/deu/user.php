@@ -49,6 +49,7 @@ define('_MYMAPACTIONS',					'Aktionen');
 define('_MYMAPBACKTOMAP',				'Zurück zum Marker-Management der Karte');
 define('_MYMPUPLOADERROR',				'Es ist eine leere Datei übermittelt worden oder ein andere Fehler während des Uploads aufgetreten');
 define('_MYMAPORADDWAYPOINT',			'oder einen einzelnen Wegpunkt hinzufügen');
+define('_MYMAPCOORDNOTRETRIEVABLE',		'Es wurden keine Koordinaten übermittelt und es konnten auch keine Koordinaten ermittelt werden. Bitte weitere Informationen angeben wie Postleitzahl, Ländercode, Stadtname');
 // edit
 define('_MYMAPTITLE',					'Titel');
 define('_MYMAPDESCRIPTION',				'Beschreibung');
@@ -101,6 +102,7 @@ define('_MYMAPNOTIFYSENT',				'Der Originalautor der Karte wurde per Email über 
 define('_MYMAPFULLSCREENMODE',			'Fullscreen-Anzeige');
 define('_MYMAPMINIMIZE',				'Minimieren');
 define('_MYMAPREALLYDELETE',			'Soll der Marker wirklich gelöscht werden?');
+define('_MYPROFILECOORDRETRIEVED',		'Aus Angaben wurde folgende Koordinate ermittelt');
 // map control (hook, display, ...)
 define('_MYMAPCLOSEMAPCONTROL',			'Menü schließen');
 define('_MYMAPHIDEMARKERS',				'Marker verstecken');
