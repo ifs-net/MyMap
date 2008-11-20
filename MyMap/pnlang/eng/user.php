@@ -49,6 +49,7 @@ define('_MYMAPACTIONS',					'Actions');
 define('_MYMAPBACKTOMAP',				'Back to map\'s marker management');
 define('_MYMPUPLOADERROR',				'File upload error or empty data submitted');
 define('_MYMAPORADDWAYPOINT',			'or add a waypoint');
+define('_MYMAPCOORDNOTRETRIEVABLE',		'No coordinate was given. Please specify more information like country code, zip code, city name');
 // edit
 define('_MYMAPTITLE',					'Title');
 define('_MYMAPDESCRIPTION',				'Description');
@@ -100,6 +101,7 @@ define('_MYMAPNOTIFYSENT',				'A notification Email was sent to the author of th
 define('_MYMAPFULLSCREENMODE',			'Fullscreen mode');
 define('_MYMAPMINIMIZE',				'Minimize');
 define('_MYMAPREALLYDELETE',			'Do you really want to delete this point?');
+define('_MYPROFILECOORDRETRIEVED',		'Geo information encoded to coordinage');
 // map control (hook, display, ...)
 define('_MYMAPCLOSEMAPCONTROL',			'close menu');
 define('_MYMAPHIDEMARKERS',				'hide markers');
