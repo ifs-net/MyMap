@@ -1,6 +1,7 @@
 SVN:
 ====
-
+- video converter added: youtube url in title of a marker will 
+  be transformed to video display
 1.4:
 ====
 - mainly some problems with dir based shorturls and ajax were fixed.
