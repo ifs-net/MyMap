@@ -236,7 +236,10 @@ class mymap_user_editPointHandler
 			}
 			if ($id>0) {
 				$result = DBUtil::updateObject($obj, 'mymap_markers');
-				if ($result) LogUtil::registerStatus(_MYMAPPOINTUPDATED);
+				if ($result) {
+				  	LogUtil::registerStatus(_MYMAPPOINTUPDATED);
+					pnRedirect(pnGetBaseURL().pnModURL('MyMap','user','display',array('mid'=>$obj['mid'])));
+				}
 			}
 			else {
 				$obj['id'] = $this->id;
