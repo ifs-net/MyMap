@@ -34,7 +34,7 @@ function MyMap_userdeletionapi_delUser($args)
 	  	// additional markers a user might have made
 	  	$column = $tables['mymap_markers_column'];
 	  	$where = $column['uid']." = ".$uid;
-	  	DBUtil::deleteWhere('mymap_markers',$where);
+	  	if (strlen($where) > 3) DBUtil::deleteWhere('mymap_markers',$where);
 	}
 	return array(
 			'title' 	=> _MYPROFILEMAPSDELETEDFOR,
