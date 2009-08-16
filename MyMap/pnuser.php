@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package      MyMap
  * @version      $Id$
