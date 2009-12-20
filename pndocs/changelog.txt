@@ -1,5 +1,6 @@
-SVN:
+1.5:
 ====
+- added support for zk 1.2 (bug in pnadminapi.php)
 - video converter added: youtube url in title of a marker will 
   be transformed to video display
 1.4:
