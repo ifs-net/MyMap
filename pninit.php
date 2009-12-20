@@ -72,6 +72,7 @@ function MyMap_upgrade($oldversion)
 		case 1.1:
 		case 1.2:
 		case 1.3:
+		case 1.4:
     }
 
     // Update successful
