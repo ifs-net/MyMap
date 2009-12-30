@@ -1,3 +1,9 @@
+2009-12-30 by trudero
+- added a fixed and extend pnForm input validator for Lat/Lon values
+  it correctly handles float values with non-english server locale
+  and understands several degree formats (like ddd°mm'ss.s" or ddd°mm.m with
+  leading or trailing direction characters [NSWEO])
+
 1.5:
 ====
 - added support for zk 1.2 (bug in pnadminapi.php)
